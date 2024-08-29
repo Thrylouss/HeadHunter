@@ -1,0 +1,21 @@
+{% extends 'HeadHunterApp/layouts/base.html' %}
+
+{% block title %}
+	Main
+{% endblock %}
+
+{% block style-back %}
+
+{% endblock %}
+
+{% block content %}
+	{% include 'HeadHunterApp/includes/headers.html' %}
+
+    <div class="vacancies-detail">
+        <h2>Your responses:</h2>
+        {% for response in responses %}
+            <a  href="{% url 'vacancy_detailed_view' vacancy_id=response.vacancy.id %}"><p>{{ response.vacancy }}</p></a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

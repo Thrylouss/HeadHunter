@@ -1,0 +1,19 @@
+{% load static %}
+
+<header>
+    <img src="{% static 'img/logo.png' %}" alt="">
+    <h2 style="color: white">{{ request.user.username }}</h2>
+    <div>
+        <a href="{% url 'logOut' %}">Log Out</a>
+
+        {% if request.user.is_staff %}
+            <a href="{% url 'worker' %}">Main</a>
+        	<a href="{% url 'resumes' %}">Resumes</a>
+            <a href="{% url 'response' %}">Response</a>
+        {% else%}
+            <a href="{% url 'seller' %}">Main</a>
+            <a href="{% url 'vacancy' %}">Vacancies</a>
+        {% endif %}
+
+    </div>
+</header>

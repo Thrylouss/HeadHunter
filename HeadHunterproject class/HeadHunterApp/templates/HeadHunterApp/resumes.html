@@ -1,0 +1,27 @@
+{% extends 'HeadHunterApp/layouts/base.html' %}
+
+{% block style-back %}
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {% include 'HeadHunterApp/includes/headers.html' %}
+
+    <div class="vacancies-detail">
+        <a href="{% url 'create_resume' %}"><button>Create Resume</button></a>
+        <h2>List of Vacancies: </h2>
+        {% for resume in resumes_list %}
+        	<div>
+                <a href="{% url 'resume_detailed_view' resume_id=resume.id %}"><h2>{{ forloop.counter }}. {{ resume.dream_job }}</h2></a>
+                <a href="{% url 'resume_delete' resume_id=resume.id %}">Delete</a>
+                <a href="{% url 'resume_edit' resume_id=resume.id %}">Edit</a>
+                <hr>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

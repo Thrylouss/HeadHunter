@@ -1,0 +1,16 @@
+{% extends 'UserApp/layouts/base-template.html' %}
+
+{% block title %}
+	Register
+{% endblock %}
+
+{% block content %}
+    <form autocomplete="off" class="my-form" action="" method="post">
+        <h2>REGISTER</h2>
+        {% csrf_token %}
+        {{ form }}
+        <button>Sign Up</button>
+        <a href="{% url 'signIn' %}">Already have account?</a>
+    </form>
+
+{% endblock %}
