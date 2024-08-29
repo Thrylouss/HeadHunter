@@ -1,0 +1,38 @@
+{% extends 'HeadHunterApp/layouts/base.html' %}
+
+{% block title %}
+	Main
+{% endblock %}
+
+{% block style-back %}
+
+{% endblock %}
+
+{% block content %}
+	{% include 'HeadHunterApp/includes/headers.html' %}
+
+    <div class="list-vacancies">
+        <div class="aside">
+            <h2>List of Resumes: </h2>
+        </div>
+
+        <div class="vacancies">
+            {% for resumes in resumes_list %}
+                <div class="vacancies-block">
+                    <div class="vacancies-block-info">
+                        <a href="{% url 'resume_detailed_view' resume_id=resumes.id %}">
+                            <h1>{{ forloop.counter }}. {{ resumes.dream_job }}</h1>
+                        </a>
+                        <p>{{ resumes.name }} {{ resumes.surname }} {{ resumes.lastname }}</p>
+                    </div>
+                    <div class="vacancies-block-salary">
+                        <p>{{ resumes.email }}</p>
+                        <p>{{ resumes.phone }}</p>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

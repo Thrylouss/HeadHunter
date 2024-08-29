@@ -1,0 +1,36 @@
+{% extends 'HeadHunterApp/layouts/base.html' %}
+
+{% block style-back %}
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {% if request.user.is_staff %}
+    	<a class="back" href="{% url 'worker' %}">&larr; Back</a>
+    {% else %}
+        <a class="back" href="{% url 'seller' %}">&larr; Back</a>
+    {% endif %}
+
+    <div class="vacancies-detail">
+        <h2>{{ vacancy.title }}</h2>
+        <h3>{{ vacancy.company }}</h3>
+        <p>{{ vacancy.salary }}</p>
+        <p>{{ vacancy.description }}</p>
+        <p>{{ vacancy.created_at }} year</p>
+        <p>{{ vacancy.type_of_job }}</p>
+
+        {% if vacancy.id in responded_vacancy_ids %}
+            <a href="{% url 'delete_response' vacancy_id=vacancy.id %}">
+                <button>Delete request</button>
+            </a>
+        {% else %}
+                <a href="{% url 'create_response' vacancy_id=vacancy.id %}"><button>Send request</button></a>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'HeadHunterApp/layouts/base.html' %}
+
+{% block style-back %}
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {% include 'HeadHunterApp/includes/headers.html' %}
+
+    <div class="list-vacancies">
+        <div class="aside">
+            <h2>List of Vacancies: </h2>
+        </div>
+        <div class="vacancies">
+            {% for vacancy in vacancies_list %}
+                <div class="vacancies-block">
+                    <div class="vacancies-block-info">
+                        <a href="{% url 'vacancy_detailed_view' vacancy_id=vacancy.id %}"><h1>{{ forloop.counter }}. {{ vacancy.title }}</h1></a>
+                        <p>{{ vacancy.description }}</p>
+                    </div>
+                    <div class="vacancies-block-salary">
+                        <p>{{ vacancy.salary }} $</p>
+                        <p class="company">{{ vacancy.company }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

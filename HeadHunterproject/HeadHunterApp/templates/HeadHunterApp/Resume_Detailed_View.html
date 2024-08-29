@@ -1,0 +1,27 @@
+{% extends 'HeadHunterApp/layouts/base.html' %}
+
+{% block style-back %}
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {% if request.user.is_staff %}
+    	<a href="{% url 'worker' %}">Back</a>
+    {% else %}
+        <a href="{% url 'seller' %}">Back</a>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <h2>{{ resume.name }} {{ resume.surname }} {{ resume.lastname }}</h2>
+    <h3>{{ resume.dream_job }}</h3>
+    <p>{{ resume.email }}</p>
+    <p>{{ resume.phone }}</p>
+    <p>{{ resume.gender }}. {{ resume.date_of_birth }}</p>
+    <p>{{ resume.exp }} year</p>
+    <p>{{ resume.education }}</p>
+{% endblock %}

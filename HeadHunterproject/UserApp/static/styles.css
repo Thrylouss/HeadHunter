@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("img/backgroundForm.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+.back {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.vacancies-detail {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 50px auto;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 40%;
+    height: 500px;
+    background-color: rgba(218, 218, 218, 0.76);
+    box-shadow: 1px  10px 10px #656565;
+    border-radius: 20px;
+}
+
+.vacancies-detail a {
+    text-decoration: none;
+    color: #272727;
+    font-size: 30px;
+}
+
+.vacancies-detail input {
+    border: none;
+    text-align: center;
+    height: 50%;
+    border-radius: 5%;
+}
+
+.create-resume {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 50px auto;
+    justify-content: center;
+    align-content: center;
+    text-align: right;
+    width: 40%;
+    height: 700px;
+    font-size: 15px;
+    background-color: rgba(218, 218, 218, 0.76);
+    box-shadow: 1px  10px 10px #656565;
+    border-radius: 20px;
+}
+
+.create-resume textarea {
+    width: 60%;
+    height: 80px;
+    margin-right: 140px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.create-resume input {
+    width: 60%;
+    height: 40px;
+    margin-right: 140px;
+    margin-bottom: 10px;
+}
+
+.create-resume select {
+    width: 60%;
+    height: 100%;
+    margin-right: 140px;
+    margin-bottom: 10px;
+}
+
+.vacancies-detail label {
+    font-size: 10px;
+}
+
+.vacancies-detail a:hover {
+    font-size: 35px;
+    transition: 0.2s;
+    color: white;
+}
+
+.vacancies-detail button {
+    border: none;
+    margin-top: 55px;
+    border-radius: 5%;
+}
+
+.vacancies-detail button:hover {
+    transform: scale(95%);
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #272727;
+    color: white;
+}
+
+.resume {
+    font-size: 20px;
+}
+
+.list-vacancies {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    color: #272727;
+}
+
+.aside {
+    text-align: center;
+    width: 30%;
+    height: 100%;
+    background-color: #e8e8e8;
+}
+
+.vacancies {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: white;
+    box-shadow: 1px  10px 10px gray;
+}
+
+.vacancies-block {
+    border-bottom: 3px solid #dadada;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 100px;
+    align-content: center;
+    height: 300px;
+}
+
+.vacancies-block div {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 5% 0;
+}
+
+.vacancies-block-salary * {
+    margin-left: 50px;
+    width: 100%;
+}
+
+.vacancies-block-info {
+    border-right: 2px solid #dadada;
+}
+
+.company {
+    font-size: 20px;
+}
+
+.vacancies p {
+}
+
+.vacancies a {
+    font-size: 25px;
+    color: #406dff;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #272727;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    width: 10%;
+    margin-right: 150px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+header img {
+    width: 70px;
+    height: 70px;
+    margin: 1%;
+}
+
+.my-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10% auto;
+    font-size: 30px;
+    width: 25%;
+    height: 550px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.17);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.my-form a {
+    color: white;
+    text-decoration: none;
+}
+
+.my-form a:hover {
+    text-decoration: underline;
+}
+
+.my-form button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+}
+
+.my-form button:hover {
+    cursor: pointer;
+    transform: scale(95%);
+    transition: 0.5s;
+}
+
+.my-form input::placeholder {
+    color: white;
+}
+
+.my-form input {
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    color: white;
+    border-bottom: 2px solid white;
+}
